@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eshopkr/titledb</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;max-width:960px;margin:0 auto;padding:20px;color:#1a1a1a}
+h1{margin:0 0 4px}
+.subtitle{color:#666;margin:0 0 24px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+.stat-card{background:#f8f8f8;padding:16px;border-radius:8px;text-align:center;border:1px solid #e5e7eb}
+.stat-card .value{font-size:1.8em;font-weight:bold;color:#2563eb}
+.stat-card .label{color:#666;font-size:.85em;margin-top:2px}
+table{border-collapse:collapse;width:100%;margin:16px 0}
+th,td{border:1px solid #ddd;padding:8px 12px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:hover{background:#fafafa}
+a{color:#2563eb}
+code{background:#f0f0f0;padding:1px 4px;border-radius:3px;font-size:.9em}
+.section{margin:32px 0}
+</style>
+</head><body>
+<h1>eshopkr/titledb</h1>
+<p class="subtitle">Nintendo Switch KR eShop title matching across 46 regions &bull; 1,387,422 total region entries</p>
+
+<div class="stat-grid">
+  <div class="stat-card"><div class="value">19,630</div><div class="label">KR Titles</div></div>
+  <div class="stat-card"><div class="value">15,682</div><div class="label">With Title ID</div></div>
+  <div class="stat-card"><div class="value">16,853</div><div class="label">Matched</div></div>
+  <div class="stat-card"><div class="value">14,830</div><div class="label">via Title ID</div></div>
+  <div class="stat-card"><div class="value">74,844</div><div class="label">via Name</div></div>
+  <div class="stat-card"><div class="value">35</div><div class="label"><a href="review.html">In Review</a></div></div>
+</div>
+
+<div class="section">
+<h2>Matching Breakdown</h2>
+<table>
+  <tr><th>Strategy</th><th>Count</th></tr>
+  <tr><td>Title ID exact match</td><td>14,830</td></tr>
+  <tr><td>Name match + confirmation</td><td>74,242</td></tr>
+  <tr><td>&nbsp;&nbsp;Size-only confirmation</td><td>581</td></tr>
+  <tr><td>&nbsp;&nbsp;Publisher alias match</td><td>2,534</td></tr>
+  <tr><td>Fallback size promotion</td><td>21</td></tr>
+  <tr><td>pHash icon match (US)</td><td>419</td></tr>
+  <tr><td>Review queue</td><td>35</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>Content Type Breakdown</h2>
+<table>
+  <tr><th>Type</th><th>KR Total</th><th>Matched</th></tr>
+  <tr><td>Base Games</td><td>8,628</td><td>8,576</td></tr>
+  <tr><td>DLC</td><td>7,054</td><td>6,450</td></tr>
+  <tr><td>Updates</td><td>0</td><td>0</td></tr>
+  <tr><td>No ID</td><td>3,948</td><td>1,827</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>Output Files</h2>
+<table>
+  <tr><th>File</th><th>Description</th><th>Entries</th></tr>
+  <tr><td><a href="KR.ko.global.json"><code>KR.ko.global.json</code></a></td><td>Full enriched KR dataset with region mappings</td><td>19,630</td></tr>
+  <tr><td><a href="KR.ko.match.json"><code>KR.ko.match.json</code></a></td><td>Lightweight titleIds mapping only</td><td>16,853</td></tr>
+  <tr><td><a href="KR.ko.base.json"><code>KR.ko.base.json</code></a></td><td>Base games only</td><td>12,576</td></tr>
+  <tr><td><a href="KR.ko.extra.json"><code>KR.ko.extra.json</code></a></td><td>DLC and updates only</td><td>7,054</td></tr>
+  <tr><td><a href="KR.ko.review.json"><code>KR.ko.review.json</code></a></td><td>Low-confidence matches for human review</td><td>35</td></tr>
+  <tr><td><a href="review.html"><code>review.html</code></a></td><td>Visual review page with thumbnails</td><td>35</td></tr>
+  <tr><td><a href="SPEC.md"><code>SPEC.md</code></a></td><td>Output format specification</td><td>&mdash;</td></tr>
+  <tr><td><a href="spec.json"><code>spec.json</code></a></td><td>Machine-readable schema</td><td>&mdash;</td></tr>
+</table>
+</div>
+
+<p style="color:#999;margin-top:32px">Generated: 2026-05-06T06:37:00.086Z &bull; <a href="SPEC.md">Format Specification</a></p>
+</body></html>

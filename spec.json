@@ -1,0 +1,82 @@
+{
+  "name": "eshopkr/titledb",
+  "version": "1.0.0",
+  "generated": "2026-05-06T06:37:00.038Z",
+  "description": "Nintendo Switch KR eShop title matching across regions",
+  "source": "https://github.com/blawar/titledb",
+  "files": {
+    "KR.ko.global.json": {
+      "description": "Full enriched KR eShop dataset with titleIds mappings",
+      "keyedBy": "nsuId (eShop ID, string)",
+      "entries": 19630
+    },
+    "KR.ko.match.json": {
+      "description": "Lightweight titleIds mapping only",
+      "keyedBy": "nsuId (eShop ID, string)",
+      "entries": 16853
+    },
+    "KR.ko.base.json": {
+      "description": "Base games only (Title ID suffix 000 or no ID)",
+      "keyedBy": "nsuId (eShop ID, string)",
+      "entries": 12576
+    },
+    "KR.ko.extra.json": {
+      "description": "DLC and updates only (Title ID suffix 001-7FF, 800)",
+      "keyedBy": "nsuId (eShop ID, string)",
+      "entries": 7054
+    },
+    "KR.ko.review.json": {
+      "description": "Low-confidence name matches for human review",
+      "keyedBy": "nsuId (eShop ID, string)",
+      "entries": 35
+    }
+  },
+  "identifiers": {
+    "titleId": {
+      "field": "id",
+      "format": "16-char hex string",
+      "description": "Software title identifier, shared across regions"
+    },
+    "eshopId": {
+      "field": "nsuId",
+      "format": "integer",
+      "description": "eShop listing identifier, region-specific"
+    }
+  },
+  "contentTypes": {
+    "base": {
+      "suffix": "0x000",
+      "description": "Base application"
+    },
+    "dlc": {
+      "suffix": "0x001-0x7FF",
+      "description": "Add-on content"
+    },
+    "update": {
+      "suffix": "0x800",
+      "description": "Patch/Update"
+    }
+  },
+  "matchingStrategies": [
+    "Title ID exact match",
+    "Normalized name match + confirmation (publisher/date/size)",
+    "Single-candidate size promotion (<20%, >10MB)",
+    "Single-candidate fallback promotion (non-generic name, <50%)",
+    "pHash icon match (US only, hamming distance <5%)",
+    "Review queue (unconfirmed)"
+  ],
+  "stats": {
+    "krTotal": 19630,
+    "krWithId": 15682,
+    "regions": 46,
+    "totalRegionEntries": 1387422,
+    "matched": 16853,
+    "idMatches": 14830,
+    "nameMatches": 74844,
+    "sizeOnlyConfirm": 581,
+    "aliasMatches": 2534,
+    "fallbackPromotions": 21,
+    "phashMatches": 419,
+    "reviewQueue": 35
+  }
+}
